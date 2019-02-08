@@ -1,32 +1,175 @@
-.App {
-  text-align: center;
+.controls .ui.menu {
+  font-size: 0.6rem;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.upper-menu .ui.mini.horizontal.statistic>.value {
+  font-size: 1rem!important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.upper-menu .ui.statistic>.label {
+  font-size: 0.8em!important;
+}
+
+.upper-menu h5.ui.attached.header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.upper-menu h5.ui.attached.header label {
+  padding-top: 0.785714rem;
+  padding-bottom: 0.785714rem;
+}
+
+.overlay-hud > .menu .ui.vertical.menu {
+  overflow: hidden;
+  width: 47px;
+  transition: all 0.35s;
+}
+
+.overlay-hud > .menu .ui.vertical.menu:hover {
+  width: 100%;
+}
+
+.overlay-hud > .menu .ui.vertical.menu .item {
+  white-space: nowrap;
+}
+
+.overlay-hud > .menu .ui.vertical.menu .item > i.icon {
+  float: left;
+  margin: 0 1em 0 0;
+  transition: all 0.35s;
+}
+
+.overlay-hud > .menu .ui.vertical.menu:hover div.item > i.icon {
+  transform: rotate(90deg);
+}
+
+.overlay-hud > .menu .ui.vertical.menu:hover div.item {
+  transition: all 0.35s;
+}
+
+.overlay-hud > .menu .ui.vertical.menu:hover div.item {
+  background-color: darkcyan;
+}
+
+/*  */
+
+html, body, div {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body * {
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root {
+  flex: 1;
+  display: flex;
+}
+
+.overlay-hud {
+  position: absolute;
+}
+
+.fixed {
+  /* border: 1px solid orange; */
+  position: fixed;
+}
+
+.overlay-hud > .menu {
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.visualization {
+  /* border: 3px solid darkblue; */
+  background: url(ddps.png) no-repeat;
+  background-size: contain;
+  flex: 1;
+}
+
+.upper-menu {
+  width: 80%;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 0px;
+  /* border: 1px solid red; */
+  /* background: red; */
+  display: flex;
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+
+.upper-menu:hover {
+  opacity: 1;
+}
+
+.upper-menu > section {
+  flex: 1;
+  /* border: 1px solid green; */
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: all 0.35s;
+  transform: translate(0, -100%);
+  /* transform: translate(0, 0%); */
+  height: fit-content;
+  position: relative;
+}
+
+.upper-menu > section > h5 {
+  margin-bottom: -40px !important;
+}
+
+.upper-menu > section > h5 > label {
+  display: block;
+}
+
+.upper-menu > [type=checkbox] {
+  display: none;
+  /* transform: translate(-1000px, -1000px); */
+}
+
+.upper-menu > [type=checkbox]:checked + section {
+  transform: translate(0, 0);
+}
+
+.controls {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.event-messages {
+  opacity: 0.5;
+  bottom: 0;
+  right: 0;
+  font-size: small;
+  text-align: right;
+  width: 50%;
+  transition: all 0.35s;
+}
+
+.event-messages:hover {
+  opacity: 1;
+  /* background-color: darkgray;
+  color: white; */
+}
+
+.event-messages ul {
+  margin: 0 5px 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.event-messages small {
+  color: gray;
 }
