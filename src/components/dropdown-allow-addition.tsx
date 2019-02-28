@@ -12,7 +12,6 @@ class DropdownAllowAdditions extends Component<{maxElement : Number, protocol : 
         {
             options[i]= {key: recentArray[i], text: recentArray[i], value: recentArray[i]}
         }
-        console.log(options);
         this.state = { options };
     }
 
