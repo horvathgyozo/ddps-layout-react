@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Button, Modal, Icon } from "semantic-ui-react";
 import { DropdownAllowAdditions } from "../dropdown-allow-addition";
+import { ConfigEditor } from "../config-editor/config-editor.component";
+
+import defaultConfig from "../../config";
 
 export const SettingsModal = () => {
   const [open, setOpen] = useState(false);
@@ -39,7 +42,7 @@ export const SettingsModal = () => {
         </div>
         <div className="ui form">
           <div className="field">
-            <textarea />
+            <ConfigEditor config={defaultConfig} />
           </div>
         </div>
       </Modal.Content>

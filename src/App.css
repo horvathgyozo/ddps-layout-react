@@ -1,3 +1,5 @@
+/* Overwrite semantic ui styles */
+
 .controls .ui.menu {
   font-size: 0.6rem;
 }
@@ -52,7 +54,17 @@
   background-color: darkcyan;
 }
 
-/*  */
+.ui.grid>.row {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.ui[class*="vertically divided"].grid>.row>.column {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Custom styles for the application */
 
 html, body, div {
   margin: 0;
@@ -172,4 +184,11 @@ body * {
 
 .event-messages small {
   color: gray;
+}
+
+.config-editor {
+  height: 350px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 10px 0;
 }
