@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Button, Modal, Icon } from "semantic-ui-react";
 import { DropdownAllowAdditions } from "../dropdown-allow-addition";
 import { ConfigEditor } from "../config-editor/config-editor.component";
-
-import defaultConfig from "../../config";
+import { ConfigContext } from "../../context/config.context";
 
 export const SettingsModal = () => {
+  const configContext = useContext(ConfigContext);
   const [open, setOpen] = useState(false);
   const [protocol, setProtocol] = useState("spark");
+  const [config, setConfig] = useState(configContext.config);
+
+  const handleSave = () => {
+    configContext.setConfig(config);
+    setOpen(false);
+  }
+
+  const handleCancel = () => {
+    setConfig(configContext.config)
+    setOpen(false)
+  }
+
   return (
     <Modal
       trigger={
@@ -17,7 +29,7 @@ export const SettingsModal = () => {
       }
       closeIcon
       open={open}
-      onClose={() => setOpen(false)}
+      onClose={handleCancel}
       closeOnDimmerClick={false}
     >
       <Modal.Header>Settings</Modal.Header>
@@ -42,12 +54,13 @@ export const SettingsModal = () => {
         </div>
         <div className="ui form">
           <div className="field">
-            <ConfigEditor config={defaultConfig} />
+            <label>Configuration</label>
+            <ConfigEditor config={config} setConfig={setConfig} />
           </div>
         </div>
       </Modal.Content>
       <Modal.Actions>
-        <Button color="green" onClick={() => setOpen(false)}>
+        <Button color="green" onClick={handleSave}>
           <Icon name="checkmark" /> Got it
         </Button>
       </Modal.Actions>

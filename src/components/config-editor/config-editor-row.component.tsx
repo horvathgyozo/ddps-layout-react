@@ -1,7 +1,7 @@
 import React from "react";
-import { IConfigValue } from "./config-editor.component";
 import { Grid } from "semantic-ui-react";
 import { ConfigEditorInput } from "./config-editor-input.component";
+import { IConfigValue } from "../../context/config.context";
 
 export const ConfigEditorRow = ({
     prop,

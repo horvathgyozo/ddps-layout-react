@@ -1,6 +1,6 @@
 import React from "react";
-import { IConfigValue } from "./config-editor.component";
 import { Input, Checkbox } from "semantic-ui-react";
+import { IConfigValue } from "../../context/config.context";
 
 export const ConfigEditorInput = ({
     value,
