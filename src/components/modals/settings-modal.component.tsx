@@ -1,13 +1,11 @@
 import React, { useState, useContext } from "react";
 import { Button, Modal, Icon } from "semantic-ui-react";
-import { DropdownAllowAdditions } from "../dropdown-allow-addition";
 import { ConfigEditor } from "../config-editor/config-editor.component";
 import { ConfigContext } from "../../context/config.context";
 
 export const SettingsModal = () => {
   const configContext = useContext(ConfigContext);
   const [open, setOpen] = useState(false);
-  const [protocol, setProtocol] = useState("spark");
   const [config, setConfig] = useState(configContext.config);
 
   const handleSave = () => {
@@ -34,24 +32,6 @@ export const SettingsModal = () => {
     >
       <Modal.Header>Settings</Modal.Header>
       <Modal.Content>
-        <Button.Group>
-          <Button
-            positive={protocol === "spark"}
-            onClick={() => setProtocol("spark")}
-          >
-            Spark
-          </Button>
-          <Button.Or />
-          <Button
-            positive={protocol === "flink"}
-            onClick={() => setProtocol("flink")}
-          >
-            Flink
-          </Button>
-        </Button.Group>
-        <div>
-          <DropdownAllowAdditions maxElement={7} protocol={protocol} />
-        </div>
         <div className="ui form">
           <div className="field">
             <label>Configuration</label>
