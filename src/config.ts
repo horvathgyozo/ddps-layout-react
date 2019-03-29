@@ -11,7 +11,7 @@ export default {
   /**
    * The minimal vertical gap between two stages (in px).
    */
-  HORIZONTAL_GAP: 100,
+  HORIZONTAL_GAP: 1000,
 
   /**
    * Describes whether to use default node size or not.
